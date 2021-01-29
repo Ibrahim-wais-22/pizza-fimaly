@@ -1,0 +1,210 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body%}
+{% load bootstrap4 %}
+
+
+
+
+
+
+
+<!-- start slider section -->
+<div class="slider_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div id="main_slider" class="carousel vert slide" data-ride="carousel" data-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="slider_cont">
+                                            <h3>بيتزا العائلة<br>Family pizza</h3>
+                                            <p>افضل وافخر انواع البيتزا اللذيذة باحجام مختلفة</p>
+                                            <a class="main_bt_border" href="#">اتصل الان</a>
+                                        </div>
+                                    </div>
+                                <div class="col-md-7 full text_align_center">
+                            <div class="slider_image">
+                        <img class="img-responsive" src="{% static 'images/pizza.png'%}" alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="slider_cont">
+                        <h3>بيتزا العائلة<br>Sandwiches</h3>
+                        <p>السندوتشات الراقية بأنواعها اللذيذة</p>
+                        <a class="main_bt_border" href="#">اتصل الان</a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="slider_image full text_align_center">
+                        <img class="img-responsive" src="{% static 'images/burger_slide.png'%}" alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+        <i class="fa fa-angle-down"></i>
+    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end slider section -->
+
+
+
+<!-- blog -->
+<div class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title" id="allmeals">
+            <i><img src="{% static 'images/title.png'%}" alt="#"/></i>
+            
+            <span >قائمة الوجبات </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+          <div class="blog_box">
+            <div class="blog_img_box">
+              <figure><img src="{% static 'images/blog_img3.png'%}" alt="#"/></figure>
+            </div>
+            <h3 style="text-align:center" >انواع البيتزا</h3>            
+            <div>
+                <table style="width:100%" class="table" id="tableDB">
+                    {%for p in pizza %}
+                    <tr id="tableDB"> 
+                        <td id="tableDB" style="text-align:right">{{p.name}}</td>
+                        <td id="tableDB" >{{p.price}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+
+            </div>
+          </div>
+        </div>
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+          <div class="blog_box">
+            <div class="blog_img_box">
+              <figure><img src="{% static 'images/blog_img2.png'%}" alt="#"/>
+              </figure>
+            </div>
+            <h3 style="text-align:center ;" >انواع الفطائر</h3>
+            <div>
+                  
+                <table style="width:100% " class="table">                 
+                    {% for pi in pie %}
+                    <tr id="tableDB">
+                        <td id="tableDB" style="text-align:right">{{pi.name}}</td>
+                        <td id="tableDB" >{{pi.price}}</td>                                        
+                    </tr>                        
+                    {% endfor %}
+                </table>     
+
+            </div>
+          </div>
+        </div>
+         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <div class="blog_box">
+            <div class="blog_img_box">
+              <figure><img src="{% static 'images/blog_img1.png'%}" alt="#"/>
+               
+              </figure>
+            </div>
+            <h3 style="text-align:center" >السندوتشات</h3>
+
+               <div>
+
+                <table style="width:100%"class="table">                            
+                    {% for s in sandwich %}                            
+                    <tr id="tableDB">
+                        <td id="tableDB" style="text-align:right">{{s.name}}</td>
+                        <td id="tableDB" >{{s.price}}</td>
+                    </tr>
+                    {% endfor %}        
+                </table> 
+
+               </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end blog -->
+  
+  
+  
+ 
+
+  
+
+
+<!-- 
+
+        جدول الوجبات
+        <div dir="rtl">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" >
+                      <table style="width:100%" class="table" id="tableDB">
+                          {%for p in pizza %}
+                          <tr id="tableDB"> 
+                              <td id="tableDB" style="text-align:right">{{p.name}}</td>
+                              <td id="tableDB" >{{p.price}}</td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" >
+                      <table style="width:100% " class="table">                 
+                          {% for pi in pie %}
+                          <tr id="tableDB">
+                              <td id="tableDB" style="text-align:right">{{pi.name}}</td>
+                              <td id="tableDB" >{{pi.price}}</td>                                        
+                          </tr>                        
+                          {% endfor %}
+                      </table>                         
+                      </div>
+  
+                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" >
+                          <table style="width:100%"class="table">                            
+                              {% for s in sandwich %}                            
+                              <tr id="tableDB">
+                                  <td id="tableDB" style="text-align:right">{{s.name}}</td>
+                                  <td id="tableDB" >{{s.price}}</td>
+                              </tr>
+                              {% endfor %}        
+                          </table> 
+                          
+                      </div>
+              </div>
+          </div>
+      </div> -->
+
+
+
+
+
+
+
+{% endblock body%}
